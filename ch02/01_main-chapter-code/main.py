@@ -24,3 +24,5 @@ text = """
 """
 ids = tokenizer.encode(text)
 print(ids)
+decoded = tokenizer.decode(ids)
+print(decoded)
