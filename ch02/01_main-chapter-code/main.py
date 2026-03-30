@@ -1,4 +1,5 @@
 import re
+from simple_tokenizer_v1 import SimpleTokenizerV1
 
 with open("the-verdict.txt", "r", encoding="utf-8") as file:
     raw_text = file.read()
@@ -15,3 +16,11 @@ print("Vocabulary size:", vocab_size)
 vocab = {word: index for index, word in enumerate(all_words)}
 for i, item in enumerate(all_words[:50]):
     print(f"{item}: {i:3d}")
+
+
+tokenizer = SimpleTokenizerV1(vocab)
+text = """
+"It's the last he painted, you know," Mrs. Gisburn said with pardonable pride."
+"""
+ids = tokenizer.encode(text)
+print(ids)
