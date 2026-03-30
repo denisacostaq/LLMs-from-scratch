@@ -37,3 +37,4 @@ text = " <|endoftext|> ".join((text1, text2))
 print(text)
 
 print(tokenizer.encode(text))
+print(tokenizer.decode(tokenizer.encode(text)))
