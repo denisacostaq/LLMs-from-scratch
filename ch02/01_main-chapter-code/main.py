@@ -26,3 +26,6 @@ ids = tokenizer.encode(text)
 print(ids)
 decoded = tokenizer.decode(ids)
 print(decoded)
+
+text = "Hello, do you like tea?"
+print(tokenizer.encode(text))
