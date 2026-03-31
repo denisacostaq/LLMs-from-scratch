@@ -1,3 +1,4 @@
+import torch
 from torch.utils.data import Dataset
 
 
@@ -12,8 +13,8 @@ class GPTDatasetV1(Dataset):
             input_id = token_ids[i:i + max_length]
             target_id = token_ids[i + 1:i + max_length + 1]
 
-            self.input_ids.append(input_id)
-            self.target_ids.append(target_id)
+            self.input_ids.append(torch.tensor(input_id))
+            self.target_ids.append(torch.tensor(target_id))
 
 
     def __len__(self):
